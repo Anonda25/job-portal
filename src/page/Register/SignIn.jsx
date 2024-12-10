@@ -4,7 +4,7 @@ import loginLitte from '../../assets/lottie/Animation - 1733848550903.json'
 import { AuthContext } from '../../Components/AuthProvider/AuthProvider';
 
 const SignIn = () => {
-    const { userSignIn }=useContext(AuthContext)
+    const { userSignIn, googleLogin }=useContext(AuthContext)
     const handelSignIN = (e)=>{
         e.preventDefault();
         const from = e.target;
@@ -14,6 +14,15 @@ const SignIn = () => {
         userSignIn(email, password)
         .then(result =>{
             console.log( 'user login in',result.user);
+        })
+        .catch(error =>{
+            console.log(error.message);
+        })
+    }
+    const hendleGoogleLogin = ()=>{
+        googleLogin()
+        .then(result =>{
+            console.log(result.user);
         })
         .catch(error =>{
             console.log(error.message);
@@ -44,7 +53,9 @@ const SignIn = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
+                        <div className="form-control mt-6 ">
+
+                            <button onClick={hendleGoogleLogin} className="btn btn-primary mb-3">Google Login</button>
                             <button className="btn btn-primary">SignIn</button>
                         </div>
                     </form>

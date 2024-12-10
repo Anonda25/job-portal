@@ -1,6 +1,11 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../../firebage/firebage.congfig';
+import { GoogleAuthProvider } from "firebase/auth";
+
+const provider = new GoogleAuthProvider();
+
+
  export const AuthContext = createContext()
 
 const AuthProvider = ({children}) => {
@@ -18,13 +23,17 @@ const AuthProvider = ({children}) => {
     const signOutUser = ()=>{
         return signOut(auth)
     }
-
+     const googleLogin = ()=>{
+        setLoading(true)
+         return signInWithPopup(auth, provider);
+     }
     const authinfo = {
         user,
         loading,
         userRegister,
         userSignIn,
-        signOutUser
+        signOutUser,
+        googleLogin
     }
 
 
