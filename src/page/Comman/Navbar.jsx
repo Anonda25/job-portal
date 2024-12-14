@@ -11,10 +11,12 @@ const Navbar = () => {
 
     const links = <>
         <NavLink to={'/'}>Home</NavLink>
+        <NavLink to={'/'}>Home</NavLink>
+        <NavLink to={'/'}>Home</NavLink>
+        <NavLink to={'/'}>Home</NavLink>
+        </>
 
-        <li><a>Item 3</a></li></>
-
-    return (
+        return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -34,17 +36,17 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm gap-3 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
                 </div>
                 <div className='flex gap-3 items-center'>
-                    <img src={logo} alt=""  className='w-10'/>
+                    <img src={logo} alt="" className='w-10' />
                     <h3 className="text-2xl">Job Protal</h3>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 gap-2">
                     {links}
                 </ul>
             </div>
@@ -61,7 +63,7 @@ const Navbar = () => {
 
             </div>
         </div>
-    );
+        );
 };
 
-export default Navbar;
+        export default Navbar;
