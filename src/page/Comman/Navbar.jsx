@@ -11,7 +11,7 @@ const Navbar = () => {
 
     const links = <>
         <NavLink to={'/'}>Home</NavLink>
-        <NavLink to={'/'}>Home</NavLink>
+        <NavLink to={'/myApplycation'}>MY Applycation</NavLink>
         <NavLink to={'/'}>Home</NavLink>
         <NavLink to={'/'}>Home</NavLink>
         </>
@@ -54,9 +54,9 @@ const Navbar = () => {
                 {
                     user ? <>
                         <button onClick={handelSignOut} className="btn">Sign Out</button></> : <>
-                        <Link to={'/register'}>Register</Link>
+                                <Link to={'/register'} ><button className="btn">Register</button></Link>
                         <Link to={'/login'}>
-                            <button className="btn">Button</button>
+                            <button className="btn">Login</button>
                         </Link>
                     </>
                 }
