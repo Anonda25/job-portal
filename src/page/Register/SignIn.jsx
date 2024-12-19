@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import loginLitte from '../../assets/lottie/Animation - 1733848550903.json'
 import { AuthContext } from '../../Components/AuthProvider/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const SignIn = () => {
     const { userSignIn, googleLogin }=useContext(AuthContext)
@@ -18,7 +19,8 @@ const SignIn = () => {
         console.log(email, password);
         userSignIn(email, password)
         .then(result =>{
-            console.log( 'user login in',result.user);
+            console.log( 'user login in',result.user.email);
+            
             Navigate(form)
         })
         .catch(error =>{

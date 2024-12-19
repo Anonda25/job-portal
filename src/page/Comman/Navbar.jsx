@@ -12,8 +12,8 @@ const Navbar = () => {
     const links = <>
         <NavLink to={'/'}>Home</NavLink>
         <NavLink to={'/myApplycation'}>MY Applycation</NavLink>
-        <NavLink to={'/'}>Home</NavLink>
-        <NavLink to={'/'}>Home</NavLink>
+        <NavLink to={'/addjob'}>Add Jobs</NavLink>
+        <NavLink to={'/MyPostJobs'}>MY Post Jobs</NavLink>
         </>
 
         return (

@@ -1,17 +1,18 @@
 import { p } from 'motion/react-client';
 import React from 'react';
-import { FaSackDollar } from 'react-icons/fa6';
+import { FaDollarSign, FaSackDollar } from 'react-icons/fa6';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
 const HotJobsCard = ({job}) => {
     console.log(job);
-    const {_id, title, company_logo, location, category, requirements,company, applicationDeadline, description, hr_name, hr_email, salaryRange }=job;
+    const {_id, title, company_logo, location, category, requirements,company, description, hr_name, hr_email, salaryRange }=job;
+    console.log(salaryRange, requirements);
     return (
         <div className="card bg-base-100  shadow-xl">
             <div className='flex items-center gap-2'>
                 <figure>
-                    <img
+                    <img 
                     className='w-12 h-12'
                         src={company_logo}
                         alt="Shoes" />
@@ -28,13 +29,14 @@ const HotJobsCard = ({job}) => {
                 </h2>
                 <p>{description}</p>
                 <div className='flex gap-2 flex-wrap'>
-                    {
-                        requirements.map(skill => <p className='border p-1 hover:bg-pink-500 hover:text-black bg-gray-400 text-blue-500 '>{skill}</p>)
-                    }
+                    {/* {
+                        requirements.map((skill,ind) => <p  key={ind}   className='border p-1 hover:bg-pink-500 hover:text-black bg-gray-400 text-blue-500 '>{skill}</p>)
+                    } */}
                 </div>
                 <p className='flex  items-center gap-2'>
-                  Salary: <FaSackDollar></FaSackDollar>  {salaryRange.min}-{salaryRange.max}{salaryRange.currency}
+                    Salary: <FaSackDollar></FaSackDollar>  {salaryRange?.min} - {salaryRange?.max}{salaryRange?.currency}
                 </p>
+            
                 <div className="card-actions  ">
                     <Link to={`/jobs/${_id}`}>
                     <div className="btn btn-secondary w-full ">Apply Now</div>

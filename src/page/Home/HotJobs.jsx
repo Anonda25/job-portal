@@ -9,12 +9,12 @@ const HotJobs = () => {
         .then(res => res.json())
         .then(data => setJobs(data))
     },[])
-    console.log(jobs);
+    console.log(jobs.salaeryRange);
     return (
         <div>
             <div className='w-11/12 mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                 {
-                    jobs.map(job =><HotJobsCard key={job._id} job={job}></HotJobsCard>)
+                    jobs.map((job, ind) =><HotJobsCard key={ind} job={job}></HotJobsCard>)
                 }
             </div>
         </div>

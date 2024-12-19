@@ -25,14 +25,14 @@ const JobDeteils = () => {
                     <h2 className="card-title">{title}!</h2>
                     <div className='flex gap-3 '>
                         {
-                            requirements.map((skill, ind) => <p className='border p-2 bg-gray-500' key={ind}>{skill}</p>)
+                            requirements?.map((skill, ind) => <p className='border p-2 bg-gray-500' key={ind}>{skill}</p>)
                         }
                     </div>
                     <p>{description}</p>
                     <div className='flex justify-between my-4'>
                         <p>{category}</p>
                         <div className='flex items-center gap-2'>
-                            salary:<FaDollarSign></FaDollarSign>  {salaryRange.min}- {salaryRange.max} {salaryRange.currency}
+                            salary:<FaDollarSign></FaDollarSign>  {salaryRange?.min}- {salaryRange?.max} {salaryRange?.currency}
                         </div>
                     </div>
                     <div className="card-actions justify-end">
